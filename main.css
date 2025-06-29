@@ -294,7 +294,7 @@ html, body {
 .container.active .btnBox {
     opacity: 1;
     transition: 1s;
-    transition-delay: 5s;
+    transition-delay: 2s;
     animation: appearBtnBox 2s ease-in-out 5s forwards,animateOpenBtn 2s ease-in-out 5s infinite;
 }
 
