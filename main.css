@@ -8,24 +8,29 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background: url('./img/moon4.jpeg') center/contain no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .container {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: #000000;
+    background: url('./img/moon4.jpeg') center/contain no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     overflow: hidden;
 }
 
 .paperHeart {
-    position: absolute;
-    height: 100px;
-    top: 80%;
-    opacity: 0;
-    /* filter: drop-shadow(0 0 20px black); */
-    animation: hiddenHeart 3.1s linear forwards,flyHeart 4s ease-in-out calc(var(--time) + 3.1s) infinite;
+    display: none;
 }
 
 .paperHeart1 {
@@ -240,16 +245,16 @@ html, body {
     font-weight: 400;
     font-style: normal;
     font-size: 120px;
-    color: #b5d4f4;
-    background-image: url('./img/10.jpg');
+    color: #75add8;
+    background-image: url('./img/7.jpg');
     background-size: cover;
     background-position: center;
     background-clip: text;
     -webkit-background-clip: text;
     /* Bỏ shadow để nổi bật texture */
     text-shadow: none;
-    /* Giữ animation xuất hiện và floating */
-    animation: appearTitle 2s linear 3.1s forwards, floatingWords 4s ease-in-out infinite;
+    /* Animation liên tục lên xuống */
+    animation: appearTitle 2s linear 3.1s forwards, continuousFloat 3s ease-in-out infinite;
     height: fit-content;
     width: fit-content;
     display: flex;  
@@ -582,6 +587,20 @@ html, body {
 
     75% {
         transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes continuousFloat {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+    }
+    
+    50% {
+        transform: translateX(-50%) translateY(-30px);
     }
 }
 
